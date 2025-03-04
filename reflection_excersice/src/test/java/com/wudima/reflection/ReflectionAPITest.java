@@ -16,7 +16,7 @@ class ReflectionAPITest {
     @BeforeEach
     public void setUp() throws Exception {
 
-         clazz = ReflectionAPI.createClass("com.wudima.spring.reflection.object.Car");
+         clazz = ReflectionAPI.createClass("com.wudima.reflection.object.Car");
          object = ReflectionAPI.createInstance(clazz,"BMW" ,1999);
 
     }
@@ -27,7 +27,7 @@ class ReflectionAPITest {
     void testCreateClass() throws Exception {
 
         assertNotNull(clazz,"class Car couldn`t be null");
-        assertEquals("com.wudima.spring.reflection.object.Car", clazz.getName());
+        assertEquals("com.wudima.reflection.object.Car", clazz.getName());
 
     }
 

@@ -12,7 +12,9 @@ class ReflectionAPITest {
 
     private Class<?> clazz;
     private Object object;
-    private String classname = "com.wudima.reflection.object.Car";
+
+    private final String classname = "com.wudima.reflection.object.Car";
+
 
     @BeforeEach
     public void setUp() throws Exception {

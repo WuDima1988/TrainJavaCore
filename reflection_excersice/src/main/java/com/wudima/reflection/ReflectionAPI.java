@@ -13,9 +13,9 @@ public class ReflectionAPI {
      * create class for work with reflection
      **/
     public static Class<?> createClass(String className) throws ClassNotFoundException {
+      throw new ExcersiceNotCompleted();
 
-//       throw new ExcersiceNotCompleted();
-        return Class.forName(className);
+     
 
     }
 

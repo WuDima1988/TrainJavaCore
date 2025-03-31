@@ -12,7 +12,9 @@ class ReflectionAPITest {
 
     private Class<?> clazz;
     private Object object;
+
     private final String classname = "com.wudima.reflection.object.Car";
+
 
     @BeforeEach
     public void setUp() throws Exception {
@@ -28,7 +30,7 @@ class ReflectionAPITest {
     void testCreateClass() throws Exception {
 
         assertNotNull(clazz,"class Car couldn`t be null");
-        assertEquals("com.wudima.reflection.object.Car", clazz.getName());
+        assertEquals(classname, clazz.getName());
 
     }
 

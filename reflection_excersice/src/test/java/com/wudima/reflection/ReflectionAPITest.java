@@ -12,11 +12,12 @@ class ReflectionAPITest {
 
     private Class<?> clazz;
     private Object object;
+    private final String classname = "com.wudima.reflection.object.Car";
 
     @BeforeEach
     public void setUp() throws Exception {
 
-         clazz = ReflectionAPI.createClass("com.wudima.reflection.object.Car");
+         clazz = ReflectionAPI.createClass(classname);
          object = ReflectionAPI.createInstance(clazz,"BMW" ,1999);
 
     }

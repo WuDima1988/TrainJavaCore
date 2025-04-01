@@ -4,7 +4,7 @@ import com.wudima.reflection.object.Car;
 import org.junit.jupiter.api.*;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -27,7 +27,7 @@ class ReflectionAPITest {
 
     @Test
     @Order(1)
-    void testCreateClass() throws Exception {
+    void testCreateClass() {
 
         assertNotNull(clazz,"class Car couldn`t be null");
         assertEquals(classname, clazz.getName());
@@ -36,10 +36,10 @@ class ReflectionAPITest {
 
     @Test
     @Order(2)
-    void testCreateInstance() throws Exception {
+    void testCreateInstance() {
 
         assertNotNull(object,"Object couldn`t be null");
-        assertTrue(object instanceof Car, "Object have to be an instance of Car");
+        assertInstanceOf(Car.class,object,"Object have to be an instance of Car");
 
     }
 
@@ -47,7 +47,7 @@ class ReflectionAPITest {
     @Order(3)
     void testInvokeMethodOne() throws Exception {
 
-        ReflectionAPI.invokeMethodOne(clazz,object);
+        ReflectionAPI.invokeMethodOne(clazz,object,"on");
 
         Field fieldMotorWork = clazz.getDeclaredField("motorWork");
         fieldMotorWork.setAccessible(true);

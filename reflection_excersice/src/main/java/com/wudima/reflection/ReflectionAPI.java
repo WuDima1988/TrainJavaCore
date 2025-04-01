@@ -4,19 +4,20 @@ package com.wudima.reflection;
 import com.wudima.exceptions.ExcersiceNotCompleted;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 
 public class ReflectionAPI {
 
-    /**
-     * createClass & createInstance have common test and will execute together
-     **/
+    /*
+      createClass & createInstance have common test and will execute together
+     */
 
     /**
      * create class for work with reflection
      **/
     public static Class<?> createClass(String className) throws ClassNotFoundException {
-      throw new ExcersiceNotCompleted();
+
+
+     return Class.forName(className);     
 
 
     }
@@ -25,16 +26,16 @@ public class ReflectionAPI {
      * create an instance of object
      **/
     public static Object createInstance(Class <?> clazz,String model, int year) throws Exception {
-        throw new ExcersiceNotCompleted();
 
+        return clazz.getConstructor(String.class, Integer.class).newInstance(model, year);
     }
 
     /**
      * invoke method "on" from class Car by using Reflection
      **/
-    public static void invokeMethodOne(Class <?> clazz, Object object) throws Exception {
+    public static void invokeMethodOne(Class <?> clazz, Object object, String methodName) throws Exception {
 
-        throw new ExcersiceNotCompleted();
+        clazz.getMethod(methodName).invoke(object);
 
 
     }
@@ -44,6 +45,8 @@ public class ReflectionAPI {
      **/
     public static void changePrivateField(Class <?> clazz, Object object,String fieldName, String col) throws Exception{
 
-        throw new ExcersiceNotCompleted();
+        Field field = clazz.getDeclaredField(fieldName);
+        field.setAccessible(true);
+        field.set(object,col);
     }
 }

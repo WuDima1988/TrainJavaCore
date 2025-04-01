@@ -8,6 +8,9 @@ import java.lang.reflect.Method;
 
 public class ReflectionAPI {
 
+    /**
+     * createClass & createInstance have common test and will execute together
+     **/
 
     /**
      * create class for work with reflection

@@ -4,13 +4,12 @@ package com.wudima.reflection;
 import com.wudima.exceptions.ExcersiceNotCompleted;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 
 public class ReflectionAPI {
 
-    /**
-     * createClass & createInstance have common test and will execute together
-     **/
+    /*
+      createClass & createInstance have common test and will execute together
+     */
 
     /**
      * create class for work with reflection
